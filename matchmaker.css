@@ -1,39 +1,44 @@
 body {
-    background-color: pink;
-    color: maroon;
+    background-color: rgb(23, 60, 181);
+    color: white;
+    border: 50px rgb(23, 60, 181);
+    border-width: 20px;
+    border-style: groove;
 }
 
 header {
-    background-color: salmon;
+    background-color: rgb(186, 47, 47);
     text-align: center;
-    padding: 20px;
-    font-size: 40px;
-    border: 50px transparent purple;
-    border-width: 50px;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+    border: 50px rgb(23, 60, 181);
+    border-width: 20px;
     border-style: groove;
     float: center;
     
 }
 
-article {
+nav {
+    background-color: rgb(186, 47, 47);
+    font-style: italic;
+    color: white;
     font-size: 20px;
-    float: left;
-    color: maroon;
+    text-align: center;
+    border: 50px rgb(23, 60, 181);
+    border-width: 20px;
+    border-style: groove;
+}
+  
+article {
+    font-size: 18px;
+    padding: 20px;
 }
 
-.list {
-    float: center;
-    color: black;
-    padding: 0px;
-    font-size: 20px;
-    color: maroon;
-  }
-
-  .para {
+aside {
+    font-size: 15px;
     padding: 20px;
-    font-size: 20px;
-    float: right;
-    color: maroon;
-  }
-
-  
+    border: 50px rgb(23, 60, 181);
+    border-width: 20px;
+    border-style: groove;
+}

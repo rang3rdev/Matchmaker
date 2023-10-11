@@ -2,90 +2,180 @@
 <html lang="en">
 	<!--
 		Author: Gavin Schnowske
+		Project: Matchmaker for the Web
 	-->
 <head>
 <meta charset="utf-8">
 	<title>Matchmaker for the Web</title>
 	<link rel="stylesheet" href="matchmaker.css">
-	<link rel="python" href="match-maker.py">
 	</head>
 	<body>
-		<article>
-			<header>
-				<h1>Matchmaker for the Web</h1>
-			</header>
-			<img src="skeleton.gif" alt="heart" style="width:500x;height:500px;float:center;">
-			<div class="para">
-			<p>~~~~ MY NAME IS GAVIN THOMAS SCHNOWSKE AND IM LOOKING FOR TRUE LOVE! ~~~</p>
-<p>I will display &#128540;</p>
-<p>I will display &#x1F61C;</p>
-		<div class="list">
-			<p>Please select your age:</p> <img src="heart.gif" alt="heart" style="width:100px;height: 100px;;float:right;">
-			<input type="radio" id="num1" name="number" value=1>
-			<label for="num1">1</label><br>
-			<input type="radio" id="num2" name="number" value=2>
-			<label for="num2">2</label><br>  
-			<input type="radio" id="num3" name="number" value=3>
-			<label for="num3">3</label><br>
-			<input type="radio" id="num4" name="number" value=4>
-			<label for="num4">4</label><br>
-			<input type="radio" id="num5" name="number" value=5>
-			<label for="num4">5</label><br><br>
-			<input type="submit" value="Submit">
-			<p>Please select your age:</p> <img src="heart.gif" alt="heart" style="width:100px;height: 100px;;float:right;">
-			<input type="radio" id="num1" name="number" value=1>
-			<label for="num1">1</label><br>
-			<input type="radio" id="num2" name="number" value=2>
-			<label for="num2">2</label><br>  
-			<input type="radio" id="num3" name="number" value=3>
-			<label for="num3">3</label><br>
-			<input type="radio" id="num4" name="number" value=4>
-			<label for="num4">4</label><br>
-			<input type="radio" id="num5" name="number" value=5>
-			<label for="num4">5</label><br>
-			<br>
-			<input type="submit" value="Submit">
-			<p>Please select your age:</p> <img src="heart.gif" alt="heart" style="width:100px;height: 100px;;float:right;">
-			<input type="radio" id="num1" name="number" value=1>
-			<label for="num1">1</label><br>
-			<input type="radio" id="num2" name="number" value=2>
-			<label for="num2">2</label><br>  
-			<input type="radio" id="num3" name="number" value=3>
-			<label for="num3">3</label><br>
-			<input type="radio" id="num4" name="number" value=4>
-			<label for="num4">4</label><br>
-			<input type="radio" id="num5" name="number" value=5>
-			<label for="num4">5</label><br>
-			<br>
-			<input type="submit" value="Submit">
-			<p>Please select your age:</p> <img src="heart.gif" alt="heart" style="width:100px;height: 100px;;float:right;">
-			<input type="radio" id="num1" name="number" value=1>
-			<label for="num1">1</label><br>
-			<input type="radio" id="num2" name="number" value=2>
-			<label for="num2">2</label><br>  
-			<input type="radio" id="num3" name="number" value=3>
-			<label for="num3">3</label><br>
-			<input type="radio" id="num4" name="number" value=4>
-			<label for="num4">4</label><br>
-			<input type="radio" id="num5" name="number" value=5>
-			<label for="num4">5</label><br>
-			<br>
-			<input type="submit" value="Submit">
-			<p>Please select your age:</p> <img src="heart.gif" alt="heart" style="width:100px;height: 100px;;float:right;">
-			<input type="radio" id="num1" name="number" value=1>
-			<label for="num1">1</label><br>
-			<input type="radio" id="num2" name="number" value=2>
-			<label for="num2">2</label><br>  
-			<input type="radio" id="num3" name="number" value=3>
-			<label for="num3">3</label><br>
-			<input type="radio" id="num4" name="number" value=4>
-			<label for="num4">4</label><br>
-			<input type="radio" id="num5" name="number" value=5>
-			<label for="num4">5</label><br>
-			<br>
-			<input type="submit" value="Submit">
-		</div>
-		</article>
+		<header>
+		<h1>Welcome to Matchmaker for the Web!</h1>
+	</header>
+	<nav>
+		<p>My name is Gavin Thomas Schnowske and I'm looking for love!~~~</p>
+	</nav>
+<aside>
+	<h1>What is Matchmaker for the Web?</h1>
+	<p>As time goes on, I have come to the realization that I am ready to part ways 
+	with the bachelor lifestyle... </p>
+	<h4>But how will I find my soulmate?</h4> 
+	<p>That is where the Matchmaker for the Web program comes to the rescue! Select a response to each
+	of my 5 simple questions, where you have the choice to respond with either... </p>
+	<ul>
+	<li>Strongly Agree</li>
+	<li>Agree</li>
+	<li>Neither agree nor disagree</li>
+	<li>Disagree</li>
+	<li>Strongly Disagree</li>
+	</ul>
+	<p>Where then, using a cutting edge formula, you will be given an compatability score out of 100 from 
+	the highly advanced algorithm, which will determine just how well of a match we are!
+	</p>
+</aside>
+	
+	<article>
+		<label>Cats are better than dogs.</label><br />
+		<select id="q1">
+			<option value="5">Strongly Agree</option>
+			<option value="4">Agree</option>
+			<option value="3">Neither agree nor disagree</option>
+			<option value="2">Disagree</option>
+			<option value="1">Strongly Disagree</option>
+		</select>
+		<br /><br />
+	
+		<label>Illinois is the greatest state.</label><br />
+		<select id="q2">
+			<option value="5">Strongly Agree</option>
+			<option value="4">Agree</option>
+			<option value="3">Neither agree nor disagree</option>
+			<option value="2">Disagree</option>
+			<option value="1">Strongly Disagree</option>
+		</select>
+		<br /><br/>
+	
+		<label>Europe is superior to America.</label><br />
+		<select id="q3">
+			<option value="5">Strongly Agree</option>
+			<option value="4">Agree</option>
+			<option value="3">Neither agree nor disagree</option>
+			<option value="2">Disagree</option>
+			<option value="1">Strongly Disagree</option>
+		</select>
+		<br /><br/>
+	
+		<label>The Chicago Bears are the best NFL franchise.</label><br/>
+		<select id="q4">
+			<option value="5">Strongly Agree</option>
+			<option value="4">Agree</option>
+			<option value="3">Neither agree nor disagree</option>
+			<option value="2">Disagree</option>
+			<option value="1">Strongly Disagree</option>
+		</select>
+		<br/><br/>
+	
+		<label>Michigan is better than Ohio State.</label><br/>
+		<select id="q5">
+			<option value="5">Strongly Agree</option>
+			<option value="4">Agree</option>
+			<option value="3">Neither agree nor disagree</option>
+			<option value="2">Disagree</option>
+			<option value="1">Strongly Disagree</option>
+		</select>
+	
+		<br/><br/><br/>
+		<button onclick="calculateCompatibility()">Calculate Compatibility</button>
+		<p id="compatibility"></p>
+		<p id='message'></p>
+	</article>
+
+	<script>
+	console.log("Starting Matchmaker...");
+	
+	function calculateCompatibility() {
+		console.log("calculateCompatibility()");
+	
+		const bestMessage = '...Are you my soulmate?'
+		const goodMessage = 'We would make great friends!'
+		const badMessage = 'We may not see completely eye to eye, but like the saying goes... opposites attract!'
+		const worstMessage = 'I think we should see other people.'
+
+		const DESIRED_RESPONSE = [
+			4, /* agree */
+			1, /* strongly disagree */
+			3, /* neither disagree nor agree */
+			5, /* strongly agree */
+			1 /* strongly disagree */
+		]
+	
+		const MAX_SCORE = 25;
+	
+		let question1Response = document.getElementById("q1").selectedOptions[0].value;
+		let question2Response = document.getElementById("q2").selectedOptions[0].value;
+		let question3Response = document.getElementById("q3").selectedOptions[0].value;
+		let question4Response = document.getElementById("q4").selectedOptions[0].value;
+		let question5Response = document.getElementById("q5").selectedOptions[0].value;
+	
+		console.log('Question 1 Answered:')
+		console.log(document.getElementById('q1').selectedOptions[0].text);
+		console.log(question1Response);
+
+		console.log('Question 2 Answered:')
+		console.log(document.getElementById('q2').selectedOptions[0].text);
+		console.log(question2Response);
+
+		console.log('Question 3 Answered:')
+		console.log(document.getElementById('q3').selectedOptions[0].text);
+		console.log(question3Response);
+
+		console.log('Question 4 Answered:')
+		console.log(document.getElementById('q4').selectedOptions[0].text);
+		console.log(question4Response);
+
+		console.log('Question 5 Answered:')
+		console.log(document.getElementById('q5').selectedOptions[0].text);
+		console.log(question5Response);
+
+
+		let question1Compatibility = 5 - Math.abs(question1Response - DESIRED_RESPONSE[0]);
+		let question2Compatibility = 5 - Math.abs(question2Response - DESIRED_RESPONSE[1]);
+		let question3Compatibility = 5 - Math.abs(question3Response - DESIRED_RESPONSE[2]);
+		let question4Compatibility = 5 - Math.abs(question4Response - DESIRED_RESPONSE[3]);
+		let question5Compatibility = 5 - Math.abs(question5Response - DESIRED_RESPONSE[4]);
 		
+		console.log("c1="+question1Compatibility);
+		console.log("c2="+question2Compatibility);
+		console.log("c3="+question3Compatibility);
+		console.log("c4="+question4Compatibility);
+		console.log("c5="+question5Compatibility);
+	
+		let totalCompatibility = question1Compatibility + question2Compatibility + question3Compatibility + question4Compatibility + question5Compatibility;
+		totalCompatibility *= 100 / MAX_SCORE;
+		totalCompatibility = Math.round(totalCompatibility);
+	
+		document.getElementById("compatibility").innerHTML = "Your compatibility score is: " + totalCompatibility;
+		console.log('tc='+totalCompatibility)
+		if (totalCompatibility >= 100) {
+			console.log(bestMessage);
+			document.getElementById("message").innerHTML = bestMessage;
+		} else if (totalCompatibility >= 70) { 
+			console.log(goodMessage);
+			document.getElementById("message").innerHTML = goodMessage;
+		} else if (totalCompatibility >= 50) {
+			console.log(badMessage);
+			document.getElementById("message").innerHTML = badMessage;
+		} else {
+			console.log(worstMessage);
+			document.getElementById("message").innerHTML = worstMessage;
+		}
+
+	}
+
+	</script>
+
+<img src="heart.gif" alt="Rotating Heart" width="250" height="200">
+
 	</body>
 	</html>
