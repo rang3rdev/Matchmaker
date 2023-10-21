@@ -3,8 +3,8 @@
 	<!--
 		Author: Gavin Schnowske
 		Project: Matchmaker for the Web
-	-->
-<head>
+	--> 
+		<head>
 <meta charset="utf-8">
 	<title>Matchmaker for the Web</title>
 	<link rel="stylesheet" href="matchmaker.css">
@@ -30,14 +30,15 @@
 	<li>Disagree</li>
 	<li>Strongly Disagree</li>
 	</ul>
-	<p>Where then, using a cutting edge formula, you will be given an compatability score out of 100 from 
-	the highly advanced algorithm, which will determine just how well of a match we are!
+	<p>Where then, using a cutting edge formula, you will be given an compatability score from 
+	the industry-leading Matchmaker algorithm, which will determine just how well of a match we are!
 	</p>
 </aside>
 	
 	<article>
 		<label>Cats are better than dogs.</label><br />
 		<select id="q1">
+			<option value="">Select</option>
 			<option value="5">Strongly Agree</option>
 			<option value="4">Agree</option>
 			<option value="3">Neither agree nor disagree</option>
@@ -48,6 +49,7 @@
 	
 		<label>Illinois is the greatest state.</label><br />
 		<select id="q2">
+			<option value="">Select</option>
 			<option value="5">Strongly Agree</option>
 			<option value="4">Agree</option>
 			<option value="3">Neither agree nor disagree</option>
@@ -58,6 +60,7 @@
 	
 		<label>Europe is superior to America.</label><br />
 		<select id="q3">
+			<option value="">Select</option>
 			<option value="5">Strongly Agree</option>
 			<option value="4">Agree</option>
 			<option value="3">Neither agree nor disagree</option>
@@ -68,6 +71,7 @@
 	
 		<label>The Chicago Bears are the best NFL franchise.</label><br/>
 		<select id="q4">
+			<option value="">Select</option>
 			<option value="5">Strongly Agree</option>
 			<option value="4">Agree</option>
 			<option value="3">Neither agree nor disagree</option>
@@ -78,6 +82,7 @@
 	
 		<label>Michigan is better than Ohio State.</label><br/>
 		<select id="q5">
+			<option value="">Select</option>
 			<option value="5">Strongly Agree</option>
 			<option value="4">Agree</option>
 			<option value="3">Neither agree nor disagree</option>
@@ -86,30 +91,68 @@
 		</select>
 	
 		<br/><br/><br/>
-		<button onclick="calculateCompatibility()">Calculate Compatibility</button>
+		<button onclick="validate()">Calculate Compatibility</button>
+		
 		<p id="compatibility"></p>
 		<p id='message'></p>
 	</article>
 
+
 	<script>
 	console.log("Starting Matchmaker...");
-	
-	function calculateCompatibility() {
+
+	let alertShown = false; // Flag to track whether the alert has been shown
+
+function validate() {
+    let isValid = true;
+
+    for (let i = 1; i <= 5; i++) {
+        let questionResponse = document.getElementById("q" + i).value;
+        let errorMessage = document.getElementById("error-q" + i);
+
+        if (questionResponse === "") {
+            isValid = false;
+
+            if (!errorMessage) {
+                errorMessage = document.createElement("p");
+                errorMessage.id = "error-q" + i;
+                errorMessage.style.color = "red";
+                document.body.appendChild(errorMessage);
+            }
+
+            errorMessage.innerHTML = "Please select a response for Question " + i;
+			console.log("Please select a response for Question " + i);
+
+            if (!alertShown) {
+                alert("Please respond to every question!");
+                alertShown = true; 
+            }
+        } else if (errorMessage) {
+            errorMessage.innerHTML = ""; 
+        }
+    }
+
+    if (isValid) {
+        calculateCompatibility();
+    }
+}
+    function calculateCompatibility() {
 		console.log("calculateCompatibility()");
 	
 		const bestMessage = '...Are you my soulmate?'
 		const goodMessage = 'We would make great friends!'
-		const badMessage = 'We may not see completely eye to eye, but like the saying goes... opposites attract!'
-		const worstMessage = 'I think we should see other people.'
+		const funMessage = 'We may not see completely eye to eye, but like the saying goes... opposites attract!'
+		const badMessage = 'I think we should see other people...'
+		const worstMessage = 'No offense, but stay away from me!'
 
 		const DESIRED_RESPONSE = [
 			4, /* agree */
 			1, /* strongly disagree */
-			3, /* neither disagree nor agree */
+			3, /* neither agree nor disagree */
 			5, /* strongly agree */
 			1 /* strongly disagree */
 		]
-	
+
 		const MAX_SCORE = 25;
 	
 		let question1Response = document.getElementById("q1").selectedOptions[0].value;
@@ -118,25 +161,44 @@
 		let question4Response = document.getElementById("q4").selectedOptions[0].value;
 		let question5Response = document.getElementById("q5").selectedOptions[0].value;
 	
-		console.log('Question 1 Answered:')
+		console.log('Question 1 Answer:')
 		console.log(document.getElementById('q1').selectedOptions[0].text);
 		console.log(question1Response);
+		console.log('Desired Answer:')
+		console.log('Agree')
+		console.log(DESIRED_RESPONSE[0]);
+	
 
-		console.log('Question 2 Answered:')
+		console.log('Question 2 Answer:')
 		console.log(document.getElementById('q2').selectedOptions[0].text);
 		console.log(question2Response);
+		console.log('Desired Answer:')
+		console.log('Neither agree nor disagree')
+		console.log(DESIRED_RESPONSE[1]);
+		
 
-		console.log('Question 3 Answered:')
+		console.log('Question 3 Answer:')
 		console.log(document.getElementById('q3').selectedOptions[0].text);
 		console.log(question3Response);
+		console.log('Desired Answer:')
+		console.log('Strongly Disagree')
+		console.log(DESIRED_RESPONSE[2]);
+	
 
-		console.log('Question 4 Answered:')
+		console.log('Question 4 Answer:')
 		console.log(document.getElementById('q4').selectedOptions[0].text);
 		console.log(question4Response);
+		console.log('Desired Answer:')
+		console.log('Strongly Disagree')
+		console.log(DESIRED_RESPONSE[3]);
 
-		console.log('Question 5 Answered:')
+		console.log('Question 5 Answer:')
 		console.log(document.getElementById('q5').selectedOptions[0].text);
 		console.log(question5Response);
+		console.log('Desired Answer:')
+		console.log('Strongly Disagree')
+		console.log(DESIRED_RESPONSE[4]);
+		
 
 
 		let question1Compatibility = 5 - Math.abs(question1Response - DESIRED_RESPONSE[0]);
@@ -145,34 +207,37 @@
 		let question4Compatibility = 5 - Math.abs(question4Response - DESIRED_RESPONSE[3]);
 		let question5Compatibility = 5 - Math.abs(question5Response - DESIRED_RESPONSE[4]);
 		
-		console.log("c1="+question1Compatibility);
-		console.log("c2="+question2Compatibility);
-		console.log("c3="+question3Compatibility);
-		console.log("c4="+question4Compatibility);
-		console.log("c5="+question5Compatibility);
-	
+		console.log("q1 compatibility:" + question1Compatibility / 5 * 100 + "%");
+		console.log("q2 compatibility:" + question2Compatibility / 5 * 100 + "%");
+		console.log("q3 compatibility:" + question3Compatibility / 5 * 100 + "%");
+		console.log("q4 compatibility:" + question4Compatibility / 5 * 100 + "%");
+		console.log("q5 compatibility:" + question5Compatibility / 5 * 100 + "%");
+
 		let totalCompatibility = question1Compatibility + question2Compatibility + question3Compatibility + question4Compatibility + question5Compatibility;
 		totalCompatibility *= 100 / MAX_SCORE;
 		totalCompatibility = Math.round(totalCompatibility);
-	
-		document.getElementById("compatibility").innerHTML = "Your compatibility score is: " + totalCompatibility;
-		console.log('tc='+totalCompatibility)
-		if (totalCompatibility >= 100) {
+
+		document.getElementById("compatibility").innerHTML = "Your compatibility score is: " + totalCompatibility + "%";
+
+    console.log('Your total compatibility score is:' + totalCompatibility + "%")
+			if (totalCompatibility >= 100) {
 			console.log(bestMessage);
 			document.getElementById("message").innerHTML = bestMessage;
-		} else if (totalCompatibility >= 70) { 
+		} else if (totalCompatibility >= 80) { 
 			console.log(goodMessage);
 			document.getElementById("message").innerHTML = goodMessage;
-		} else if (totalCompatibility >= 50) {
+		} else if (totalCompatibility >= 60) {
+			console.log(funMessage);
+			document.getElementById("message").innerHTML = funMessage;
+		} else if (totalCompatibility >= 40) {
 			console.log(badMessage);
 			document.getElementById("message").innerHTML = badMessage;
 		} else {
 			console.log(worstMessage);
 			document.getElementById("message").innerHTML = worstMessage;
 		}
-
-	}
-
+		
+}
 	</script>
 
 <img src="heart.gif" alt="Rotating Heart" width="250" height="200">
