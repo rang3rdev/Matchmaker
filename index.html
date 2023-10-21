@@ -93,6 +93,9 @@
 		<br/><br/><br/>
 		<button onclick="validate()">Calculate Compatibility</button>
 		
+		<button onclick="validate()">Calculate Compatibility</button>
+	</form>
+		
 		<p id="compatibility"></p>
 		<p id='message'></p>
 	</article>
@@ -207,6 +210,12 @@ function validate() {
 		let question4Compatibility = 5 - Math.abs(question4Response - DESIRED_RESPONSE[3]);
 		let question5Compatibility = 5 - Math.abs(question5Response - DESIRED_RESPONSE[4]);
 		
+		console.log("c1="+question1Compatibility);
+		console.log("c2="+question2Compatibility);
+		console.log("c3="+question3Compatibility);
+		console.log("c4="+question4Compatibility);
+		console.log("c5="+question5Compatibility);
+
 		console.log("q1 compatibility:" + question1Compatibility / 5 * 100 + "%");
 		console.log("q2 compatibility:" + question2Compatibility / 5 * 100 + "%");
 		console.log("q3 compatibility:" + question3Compatibility / 5 * 100 + "%");
